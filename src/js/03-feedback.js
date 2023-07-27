@@ -24,11 +24,16 @@ function onFormInput() {
 function onFormSubmit(event) {
     event.preventDefault();
 
-    // const {elements: { email, message }}  = event.currentTarget;
+    const {elements: { email, message }}  = event.currentTarget;
 
-    console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
+    if (email.value === "" || message.value === "") {
+        alert("Please fill in all the fields!");
+    }
+
+    console.log({ email: email.value, message: message.value });
     
     event.currentTarget.reset();
+    
     localStorage.removeItem(STORAGE_KEY);
 }
 
