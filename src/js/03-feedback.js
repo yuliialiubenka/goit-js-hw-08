@@ -28,9 +28,9 @@ function onFormSubmit(event) {
 
     if (email.value === "" || message.value === "") {
         alert("Please fill in all the fields!");
+    } else {
+        console.log({ email: email.value, message: message.value });
     }
-
-    console.log({ email: email.value, message: message.value });
     
     event.currentTarget.reset();
     
